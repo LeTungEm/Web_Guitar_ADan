@@ -3,7 +3,7 @@
     v-bind:class="
       status ? 'translate-x-0 shadow-lg z-[10]' : '-translate-x-full'
     "
-    class="pt-2 overflow-y-scroll scrollbar-hide lg:overflow-visible text-lg h-full w-2/3 [&>*]:mr-10 hover:[&>li]:text-black hover:[&>li]:italic fixed top-0 left-0 bg-white text-black xl:text-black duration-500 xl:w-auto xl:h-auto xl:top-[unset] xl:translate-x-0 xl:left-[unset] xl:flex xl:flex-wrap xl:relative"
+    class="pt-2 overflow-y-scroll scrollbar-hide lg:overflow-visible text-lg h-full w-2/3 [&>*]:mr-10 hover:[&>li]:text-black hover:[&>li]:underline [&>li]:duration-300 fixed top-0 left-0 bg-white text-black xl:text-black duration-500 xl:w-auto xl:h-auto xl:top-[unset] xl:translate-x-0 xl:left-[unset] xl:flex xl:flex-wrap xl:relative"
   >
     <div class="py-1 ml-5 mt-1 flex justify-between items-center xl:hidden">
       <h1 class="text-xl text-black font-bold xl:text-3xl">Menu</h1>
