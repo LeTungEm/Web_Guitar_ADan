@@ -20,8 +20,22 @@ switch ($action) {
     case "getAll":
         $message = $cat->getAll();
         break;
-    case "getAllCat":
-        $message = $cat->getAllCat();
+    case "getAllAccessory":
+        $message = $cat->getAllAccessory();
+        break;
+    case "getBestSeller":
+        $message = $cat->getBestSeller();
+        break;
+    case "getNewProduct":
+        $message = $cat->getNewProduct();
+        break;
+    case "getAllCatByCategorySlug":
+        $category_slug = $_POST["category_slug"];
+        $message = $cat->getAllCatByCategorySlug($category_slug);
+        break;
+    case "getAllParentChildByCategorySlug":
+        $category_slug = $_POST["category_slug"];
+        $message = $cat->getAllParentChildByCategorySlug($category_slug);
         break;
     case "getBySlug":
         $slug = $_POST["slug"];
@@ -31,6 +45,16 @@ switch ($action) {
         $cat_id = $_POST["cat_id"];
         $isShow = $_POST["isShow"];
         $message = $cat->changeIsShow($cat_id, $isShow);
+        break;
+    case "changeBestSellerList":
+        $cat_id = $_POST["cat_id"];
+        $isBestSeller = $_POST["isBestSeller"];
+        $message = $cat->changeBestSellerList($cat_id, $isBestSeller);
+        break;
+    case "changeNewList":
+        $cat_id = $_POST["cat_id"];
+        $isNew = $_POST["isNew"];
+        $message = $cat->changeNewList($cat_id, $isNew);
         break;
     case "deleteCat":
         $cat_id = $_POST["cat_id"];
@@ -48,49 +72,45 @@ switch ($action) {
     case "insertCat":
         $name = $_POST["name"];
         $slug = $_POST["slug"];
-        $age = $_POST["age"];
         $price = $_POST["price"];
         $new_price = $_POST["new_price"];
-        $gender = $_POST["gender"];
-        $color = $_POST["color"];
-        $status = $_POST["status"];
-        $dewormmed = $_POST["dewormmed"];
+        $brand = $_POST["brand"];
         $origin = $_POST["origin"];
-        $father = $_POST["father"];
-        $mother = $_POST["mother"];
-        $health = $_POST["health"];
-        $vaccination = $_POST["vaccination"];
-        $characteristic = $_POST["characteristic"];
+        $outstanding = $_POST["outstanding"];
         $description = $_POST["description"];
+        $status = $_POST["status"];
+        $isProfes = $_POST["isProfes"];
+        $type = $_POST["type"];
         $isShow = $_POST["isShow"];
         $image = $_POST["image"];
         $video = $_POST["video"];
+        $is_delete = $_POST["is_delete"];
         $category_id = $_POST["category_id"];
-        $message = $cat->insertCat($name, $slug, $age, $price, $new_price, $gender, $color, $status, $dewormmed, $origin, $father, $mother, $health, $vaccination, $characteristic, $description, $isShow, $image, $video, $category_id);
+        $isBestSeller = $_POST["isBestSeller"];
+        $isNew = $_POST["isNew"];
+        $message = $cat->insertCat($name, $slug, $price, $new_price, $brand, $origin, $outstanding, $description, $status, $isProfes, $type, $isShow, $image, $video, $is_delete, $category_id, $isBestSeller, $isNew);
         break;
     case "updateCat":
         $name = $_POST["name"];
         $slug = $_POST["slug"];
-        $age = $_POST["age"];
         $price = $_POST["price"];
         $new_price = $_POST["new_price"];
-        $gender = $_POST["gender"];
-        $color = $_POST["color"];
-        $status = $_POST["status"];
-        $dewormmed = $_POST["dewormmed"];
+        $brand = $_POST["brand"];
         $origin = $_POST["origin"];
-        $father = $_POST["father"];
-        $mother = $_POST["mother"];
-        $health = $_POST["health"];
-        $vaccination = $_POST["vaccination"];
-        $characteristic = $_POST["characteristic"];
+        $outstanding = $_POST["outstanding"];
         $description = $_POST["description"];
+        $status = $_POST["status"];
+        $isProfes = $_POST["isProfes"];
+        $type = $_POST["type"];
         $isShow = $_POST["isShow"];
         $image = $_POST["image"];
         $video = $_POST["video"];
+        $is_delete = $_POST["is_delete"];
         $category_id = $_POST["category_id"];
+        $isBestSeller = $_POST["isBestSeller"];
+        $isNew = $_POST["isNew"];
         $cat_id = $_POST["cat_id"];
-        $message = $cat->updateCat($name, $slug, $age, $price, $new_price, $gender, $color, $status, $dewormmed, $origin, $father, $mother, $health, $vaccination, $characteristic, $description, $isShow, $image, $video, $category_id, $cat_id);
+        $message = $cat->updateCat($name, $slug, $price, $new_price, $brand, $origin, $outstanding, $description, $status, $isProfes, $type, $isShow, $image, $video, $is_delete, $category_id, $isBestSeller, $isNew, $cat_id);
         break;
     default:
         $message = "action is not found";

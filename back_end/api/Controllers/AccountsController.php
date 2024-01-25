@@ -17,6 +17,9 @@ $action = isset($_POST["action"]) ? $_POST["action"] : '';
 $Accounts = new Accounts();
 $message = array();
 switch ($action) {
+    case "getAcount":
+        $message = $Accounts->getAcount();
+        break;
     case "authenticate":
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -28,8 +31,9 @@ switch ($action) {
         $message = $Accounts->insertAccount($user_name, $pass);
         break;
     case "updateAccount":
+        $user_name = $_POST["user_name"];
         $pass = $_POST["pass"];
-        $message = $Accounts->updateAccount($pass);
+        $message = $Accounts->updateAccount($user_name, $pass);
         break;
     default:
         $message = "action is not found";

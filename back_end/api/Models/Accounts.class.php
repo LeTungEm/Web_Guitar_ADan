@@ -4,6 +4,17 @@ include("../../function/function.php");
 class Accounts extends Db
 {
 
+    public function getAcount()
+    {
+        $sql = "SELECT * FROM `admin`";
+        $data = $this->select($sql);
+        if (count($data) > 0) {
+            return $data[0];
+        } else {
+            return null;
+        }
+    }
+
     public function authenticate($email, $password)
     {
         $sql = "SELECT * FROM `admin` WHERE `user_name` = ? and `pass` = ?";
@@ -14,7 +25,7 @@ class Accounts extends Db
             return ['message' => false];
         }
     }
-    
+
     public function insertAccount($user_name, $pass)
     {
         $sql = "INSERT INTO `admin`(`user_name`, `pass`, `salt`) VALUES (?,?,?)";

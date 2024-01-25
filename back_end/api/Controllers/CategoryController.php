@@ -20,11 +20,18 @@ switch ($action) {
     case "getAll":
         $message = $category->getAll();
         break;
+    case "getAllChild":
+        $message = $category->getAllChild();
+        break;
     case "getClassicCategory":
         $message = $category->getClassicCategory();
         break;
     case "getOldCategory":
         $message = $category->getOldCategory();
+        break;
+    case "getChildBySlug":
+        $category_slug = $_POST["category_slug"];
+        $message = $category->getChildBySlug($category_slug);
         break;
     // case "getDisplayCategories":
     //     $message = $categories->getDisplayCategories();
