@@ -99,7 +99,7 @@
             </div>
             <CropImageMolecule
               :width="1920"
-              :heigh="1080"
+              :heigh="500"
               @changeImage="changeBannerImage"
               class="bg-black"
             />

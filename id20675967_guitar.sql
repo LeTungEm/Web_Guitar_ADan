@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 25, 2024 at 07:17 AM
+-- Generation Time: Jan 31, 2024 at 02:22 PM
 -- Server version: 10.5.20-MariaDB
 -- PHP Version: 7.3.33
 
@@ -67,7 +67,8 @@ INSERT INTO `blog` (`blog_id`, `name`, `short_description`, `description`, `crea
 (2, '[TẬP 2 ]-THIỆN NGUYỆN CÙNG BỜM - | BỜM guitar 0898026487', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/f07zhO2ywXM?si=XnesEFP4uOkT9h19\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>', '<p style=\"text-align: center;\"><strong><u><span style=\"font-size: 48px;\">H&igrave;nh ảnh thiện nguyện năm mới</span></u></strong></p><p><span contenteditable=\"false\" class=\"fr-img-caption fr-fic fr-dib fr-draggable\" style=\"width: 534px;\" draggable=\"false\"><span class=\"fr-img-wrap\"><a href=\"https://www.pace.edu.vn/tin-kho-tri-thuc/ban-hang-la-gi\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://webbooksstore.000webhostapp.com/back_end/api/Controllers/GetFileController.php?imgURL=word/81679407image_news.jpg&width=1200\" style=\"width: 50%;\" class=\"fr-fic fr-dib\"><span class=\"fr-inner\" contenteditable=\"true\">Ảnh n&agrave;y c&oacute; link đến trang kh&aacute;c</span></a></span></span></p><blockquote><blockquote><blockquote><ol style=\"list-style-type: lower-alpha;\"><li style=\"text-align: justify;\">Logo ph&iacute;a tr&ecirc;n</li><li style=\"text-align: justify;\">Log ph&iacute;a dưới</li><li style=\"text-align: justify;\">Logo ẩn.</li></ol></blockquote></blockquote></blockquote>', '2024-01-14 09:41:07', 'tn', '794763171.jpg', 1, '[tap-2-]-thien-nguyen-cung-bom---|-bom-guitar-0898026487'),
 (6, 'Đập hộp đàn mới', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lu6iMW6wQOQ?si=bMD6PzZDWgrdQJWF\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>', '', '2024-01-20 05:35:47', 'bc', 'default.jpg', 1, 'đap-hop-đan-moi'),
 (7, 'Đập hộp đàn ngày mới', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Xbb6sNzLZqE?si=EFi7mbITZ66cYbPM\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>', '', '2024-01-20 05:36:40', 'bc', 'default.jpg', 1, 'đap-hop-đan-ngay-moi'),
-(8, '    0:02 / 11:03  [TẬP 1]-THIỆN NGUYỆN CÙNG BỜM- | BỜM guitar 0898026487', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/32XAfl1HAvM?si=oZzQaPuaY-rSDT0B\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>', '', '2024-01-20 05:56:44', 'tn', 'undefined', 1, '----0:02-/-11:03--[tap-1]-thien-nguyen-cung-bom--|-bom-guitar-0898026487');
+(8, '    0:02 / 11:03  [TẬP 1]-THIỆN NGUYỆN CÙNG BỜM- | BỜM guitar 0898026487', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/32XAfl1HAvM?si=oZzQaPuaY-rSDT0B\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>', '', '2024-01-20 05:56:44', 'tn', 'undefined', 1, '----0:02-/-11:03--[tap-1]-thien-nguyen-cung-bom--|-bom-guitar-0898026487'),
+(9, '[LIVE 49] -TRỰC TIẾP ĐẬP HỘP & BÁO GIÁ NÓNG GUITAR ĐẤU GIÁ CẬP CẢNG - | BỜM guitar 0898026487', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/CgnjvmSLYBk?si=Rv_zKG19L8HKsnSS\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>', '', '2024-01-31 13:55:31', 'tn', 'gggdefault.jpg', 1, '[live-49]--truc-tiep-đap-hop-&-bao-gia-nong-guitar-đau-gia-cap-cang---|-bom-guitar-0898026487');
 
 -- --------------------------------------------------------
 
@@ -85,8 +86,15 @@ CREATE TABLE `brand` (
 --
 
 INSERT INTO `brand` (`brand_id`, `name`) VALUES
-(1, 'Yamaha'),
-(2, 'hãng khác');
+(1, 'YAMAHA'),
+(2, 'MORRIS'),
+(5, 'ANTONIO SANCHEZ'),
+(6, 'JAMES'),
+(7, 'SUZUKI'),
+(8, 'MATSUOKA'),
+(9, 'ARIA'),
+(10, 'NGHỆ NHÂN'),
+(11, 'TAYLOR');
 
 -- --------------------------------------------------------
 
@@ -121,7 +129,6 @@ CREATE TABLE `cat` (
 --
 
 INSERT INTO `cat` (`cat_id`, `name`, `slug`, `price`, `new_price`, `brand`, `origin`, `outstanding`, `description`, `status`, `isProfes`, `type`, `isShow`, `image`, `video`, `is_delete`, `category_id`, `isBestSeller`, `isNew`) VALUES
-(1, 'dan loai 1', 'dan-loai-1', 1000000, 0, '1', '1', NULL, NULL, 1, 1, 'product', 1, '[]', '[]', 0, 3, 1, 1),
 (2, 'dan loai 2', 'dan-loai-2', 2000000, 0, '2', '1', NULL, NULL, 0, 1, 'product', 1, '[]', '[]', 0, 3, 1, 0),
 (3, 'dan loai 3', 'dan-loai-3', 40000000, 3500000, '1', '2', NULL, NULL, 0, 1, 'product', 1, '[]', '[]', 0, 4, 1, 0),
 (4, 'dan loai 4', 'dan-loai-4', 3000000, 0, '1', '2', NULL, NULL, 0, 1, 'product', 1, '[]', '[]', 0, 3, 1, 1),
@@ -175,9 +182,10 @@ CREATE TABLE `origin` (
 --
 
 INSERT INTO `origin` (`origin_id`, `name`) VALUES
-(1, 'Singapore'),
-(2, 'Nhật Bản'),
-(3, 'Nước khác');
+(1, 'NHẬT BẢN'),
+(2, 'TÂY BAN NHA'),
+(3, 'MỸ'),
+(4, 'NƯỚC KHÁC');
 
 -- --------------------------------------------------------
 
@@ -202,7 +210,7 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`footer_content`, `facebook`, `tiktok`, `instagram`, `youtube`, `phone`, `zalo`, `messenger`, `client_respons`) VALUES
-('Chuyên cung cấp các loại đàn guitar', 'https://www.facebook.com/bomguitar', 'link', 'linklink', 'https://www.youtube.com/@bom.guitar', '0898026487', 'https://zalo.me/84898026487', '', '[\"client_responses/37767740c8574001389eefc0b68f.jpg\",\"client_responses/398198183982f54074dfa381face.jpg\",\"client_responses/837890722.jpg\",\"client_responses/450755723.jpg\",\"client_responses/666802654.jpg\",\"client_responses/628511405.jpg\",\"client_responses/266404686.jpg\"]');
+('Tùng đã sửa trên laptop', 'https://www.facebook.com/bomguitar', 'https://www.tiktok.com/@bom.guitar', 'https://www.instagram.com/bom.guitar', 'https://www.youtube.com/@bom.guitar', '0898026487', 'https://zalo.me/84898026487', 'link message', '[\"client_responses/78855872z4845226081930_51c912fa76abf13b852d42eacee4d070.jpg\",\"client_responses/25992654z4845241578369_13bd266c8e731bc58880d332325598ee.jpg\",\"client_responses/90636486z4845242906633_f50dfe569d2d7c6eab8fd21619fbff29.jpg\",\"client_responses/4789921887120701_1490292901145139_633151485932208128_n.jpg\",\"client_responses/3552874987187246_1348066518706172_7978677633867055104_n.jpg\",\"client_responses/46067998128550231_1699511770220926_6650380842401954467_o.jpg\",\"client_responses/71369425Au1.jpg\"]');
 
 --
 -- Indexes for dumped tables
@@ -258,13 +266,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `cat`
@@ -282,7 +290,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `origin`
 --
 ALTER TABLE `origin`
-  MODIFY `origin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `origin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

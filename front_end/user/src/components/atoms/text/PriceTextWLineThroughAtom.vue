@@ -1,5 +1,5 @@
 <template>
-  <span class="block line-through text-gray-500">{{ formattedPrice }}</span>
+  <span class="block line-through">{{ formattedPrice }}</span>
 </template>
 
 <script>

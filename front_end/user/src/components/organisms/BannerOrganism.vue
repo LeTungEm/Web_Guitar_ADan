@@ -1,6 +1,6 @@
 <template>
-  <div class="flex overflow-hidden h-[30vh] md:h-[50vh] lg:h-[90vh]">
-    <img class="object-fill w-full" :src="`${doman}/back_end/api/Controllers/GetFileController.php?imgURL=/banner/banner.jpg`" alt="meo">
+  <div class="flex overflow-hidden">
+    <img class="object-fill w-full" :src="`${doman}/back_end/api/Controllers/GetFileController.php?imgURL=/banner/banner.jpg&width=1700`" alt="meo">
   </div>
 </template>
 

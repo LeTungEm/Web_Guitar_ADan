@@ -1,5 +1,5 @@
 <template>
-  <div class="background-image" :style="`background-image: url(${doman}/back_end/api/Controllers/GetFileController.php?imgURL=/background/background.jpg&width=1500);`">
+  <div class="background-image" :style="`background-image: url(${doman}/back_end/api/Controllers/GetFileController.php?imgURL=/background/background.jpg&width=1700);`">
     <div>
       <SubNavBarOrganism :socialData="social" />
       <NavBarOrganism :socialData="social" />

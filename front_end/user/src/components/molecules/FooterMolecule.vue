@@ -36,7 +36,7 @@
     <div class="fixed bottom-0 right-0 left-0">
       <div class="block z-10 mb-[10%] ml-[10%]">
         <a
-          class="flex gap-5 text-2xl lg:text-5xl text-red-500"
+          class="flex gap-5 text-2xl lg:text-5xl text-red-600 font-extrabold"
           :href="`tel:${socialData.phone}`"
         >
           <font-awesome-icon class="animation-ring" :icon="['fas', 'phone']" />
