@@ -12,7 +12,9 @@
         />
       </div>
       <div class="mb-10">
-        <div class="text-lg text-white lg:text-3xl font-bold capitalize mb-5">Báo chí</div>
+        <div class="text-lg text-white lg:text-3xl font-bold capitalize mb-5">
+          Báo chí
+        </div>
         <grid-news-organisms
           @changePage="getListBC"
           :listNew="listBC"
@@ -83,7 +85,14 @@ export default {
     },
     getListBC(currentPage) {
       this.loadingStatus = true;
-      BlogService.getBCActiveLimit(currentPage, NEWS_EACH_PAGE)
+      currentPage = currentPage * NEWS_EACH_PAGE;
+      if(currentPage < 0){
+        currentPage = 0;
+      }
+      BlogService.getBCActiveLimit(
+        currentPage,
+        NEWS_EACH_PAGE
+      )
         .then((res) => {
           this.listBC = res.data;
         })
@@ -93,7 +102,14 @@ export default {
     },
     getListTN(currentPage) {
       this.loadingStatus = true;
-      BlogService.getTNActiveLimit(currentPage, NEWS_EACH_PAGE)
+      currentPage = currentPage * NEWS_EACH_PAGE;
+      if(currentPage < 0){
+        currentPage = 0;
+      }
+      BlogService.getTNActiveLimit(
+        currentPage,
+        NEWS_EACH_PAGE
+      )
         .then((res) => {
           this.listTN = res.data;
         })

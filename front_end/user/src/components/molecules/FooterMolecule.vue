@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex justify-between flex-wrap lg:[&>*]:w-[30%] gap-5 px-[5%] py-[10%] lg:py-[3%] bg-black text-white"
+    class="flex justify-between flex-wrap lg:[&>*]:w-[30%] gap-5 px-[5%] py-[10%] lg:pt-[3%] lg:pb-[6%] bg-black text-white"
   >
     <div class="flex justify-center">
       <div>
         <div class="text-xl font-bold uppercase">Sơ lược về Bờm Guitar</div>
         <hr class="w-[5vw] border-b-4 my-5" />
-        <p class="text-lg">{{ socialData.footer_content }}</p>
+        <div class="text-lg" v-html="socialData.footer_content"></div>
       </div>
     </div>
     <div class="flex justify-center">

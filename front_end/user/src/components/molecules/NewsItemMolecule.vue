@@ -1,9 +1,9 @@
 <template>
   <div
-    class="relative backdrop-blur-sm flex flex-col w-full h-full shadow-md rounded-sm border-2 hover:border-black duration-300"
+    class="backdrop-blur-sm m-[5%] lg:m-[10%] shadow-md rounded-sm border-2 hover:border-black duration-300"
   >
     <div v-html="newsData.short_description" class="relative [&>*]:max-w-[100%_!important] [&>*]:h-[unset_!important]"></div>
-    <div class="flex flex-col flex-1 justify-between p-3 text-center">
+    <div class="p-3 text-center">
       <h1 class="block text-white text-[12px] md:text-xl font-bold capitalize">
         {{ newsData.name }}
       </h1>

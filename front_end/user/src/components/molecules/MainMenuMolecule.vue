@@ -67,37 +67,6 @@
       <router-link to="/cua-hang/guitar-acoustic">
         Guitar Acoustic
       </router-link>
-      <!-- <ul
-        v-bind:style="menuStatus ? 'display: block !important' : ''"
-        class="hidden text-black lg:text-black whitespace-nowrap lg:group-hover:block lg:absolute top-full lg:bg-gray-300 rounded-sm [&>*]:mb-2 lg:hover:[&>*]:bg-white [&>*]:py-1 [&>*]:px-3 [&>*]:cursor-pointer capitalize"
-      >
-        <li
-          :onclick="
-            () =>
-              changeCategory({
-                parent: { name: 'guitar cổ', slug: 'guitar-co' },
-                child: null,
-              })
-          "
-        >
-          <router-link to="/cua-hang/guitar-co">Tất cả guitar cổ</router-link>
-        </li>
-        <li
-          v-for="category in oldCategories"
-          :onclick="
-            () =>
-              changeCategory({
-                parent: { name: 'guitar cổ', slug: 'guitar-co' },
-                child: { name: category.name, slug: category.slug },
-              })
-          "
-          :key="category.slug"
-        >
-          <router-link :to="`/cua-hang/guitar-co/${category.slug}`">
-            {{ category.name }}
-          </router-link>
-        </li>
-      </ul> -->
     </li>
     <li
       :onclick="closeMenu"
@@ -110,6 +79,12 @@
       class="py-1 ml-5 border-b lg:border-0 group text-black uppercase"
     >
       <router-link class="block" to="/hoat-dong"> Hoạt Động </router-link>
+    </li>
+    <li
+      :onclick="closeMenu"
+      class="py-1 ml-5 border-b lg:border-0 group text-black uppercase"
+    >
+      <router-link class="block" to="/huong-dan-mua-hang"> Hướng Dẫn Mua Đàn </router-link>
     </li>
     <li>
       <map-molecule class="ml-5 lg:hidden" />

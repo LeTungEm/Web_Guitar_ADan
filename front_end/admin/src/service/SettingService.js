@@ -11,7 +11,7 @@ class SettingService {
         return axios.post(`${PRODUCT_API_URL}`, formData);
     }
     
-    updateSetting(banner, facebook, tiktok, instagram, youtube, phone, zalo, messenger) {
+    updateSetting(banner, facebook, tiktok, instagram, youtube, phone, zalo, messenger, recomment) {
         let formData = new FormData();
         formData.append('action', 'updateSetting');
         formData.append('banner', banner);
@@ -22,6 +22,7 @@ class SettingService {
         formData.append('phone', phone);
         formData.append('zalo', zalo);
         formData.append('messenger', messenger);
+        formData.append('recomment', recomment);
         return axios.post(`${PRODUCT_API_URL}`, formData);
     }
     updateClientRespons(client_respons) {

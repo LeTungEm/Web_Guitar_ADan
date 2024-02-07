@@ -99,7 +99,7 @@
           />
         </div>
       </div>
-      <div class="shadow-lg p-5">
+      <!-- <div class="shadow-lg p-5">
         <div class="text-xl border-b-2 border-black font-bold mb-5">
           Giới thiệu về Bờm Guitar (footer)
         </div>
@@ -109,6 +109,30 @@
           placeholder="Nhập văn bản"
           v-model="footerContent"
         ></textarea>
+      </div> -->
+      <div class="mb-5 shadow-lg p-5">
+        <label class="text-gray-500 font-bold" for="description"
+          >Giới thiệu về Bờm Guitar (footer)</label
+        >
+        <froala
+          class="z-20 border rounded-md w-full outline-0 focus:outline-2 focus:outline-green-700 py-1 lg:py-2 px-2 lg:px-4"
+          id="description"
+          :tag="'textarea'"
+          :config="config"
+          v-model:value="footerContent"
+        ></froala>
+      </div>
+      <div class="mb-5 shadow-lg p-5">
+        <label class="text-gray-500 font-bold" for="recomment"
+          >Hướng dẫn mua đàn</label
+        >
+        <froala
+          class="z-20 border rounded-md w-full outline-0 focus:outline-2 focus:outline-green-700 py-1 lg:py-2 px-2 lg:px-4"
+          id="recomment"
+          :tag="'textarea'"
+          :config="configRe"
+          v-model:value="recomment"
+        ></froala>
       </div>
       <div
         :onclick="saveData"
@@ -121,15 +145,193 @@
 </template>
 
 <script>
+import { DOMAN } from "@/assets/js/config";
 import { decodeEmail } from "@/assets/js/quickFunction";
 import AccountsService from "@/service/AccountsService";
+import CatService from "@/service/CatService";
 import SettingService from "@/service/SettingService";
+import UploadFile from "@/service/UploadFile";
 import { mapActions } from "vuex";
 
 export default {
   name: "ContentManagement",
   data() {
     return {
+      config: {
+        events: {
+          initialized: function () {
+            console.log("initialized");
+          },
+          "image.inserted": function (img) {
+            let imageName =
+              Math.floor(Math.random() * (100000000 - 1000000 + 1)) +
+              1000000 +
+              "image_news.jpg";
+            fetch(img[0].src)
+              .then((response) => response.blob())
+              .then((blob) => {
+                UploadFile.uploadImage([blob], [`word/${imageName}`]).then(
+                  (res) => {
+                    console.log(res.data);
+                    // set new src of image in HTML
+                    let newUrls = `${DOMAN}/back_end/api/Controllers/GetFileController.php?imgURL=word/${imageName}&width=1200`;
+                    let htmlString = this.html.get();
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(htmlString, "text/html");
+
+                    // Lấy tất cả các thẻ <img> trong cây DOM
+                    let imgElements = doc.querySelectorAll("img");
+
+                    // Thay đổi thuộc tính src của mỗi thẻ <img> bằng các URL mới
+                    imgElements.forEach(function (itemImg) {
+                      if (itemImg.src === img[0].src) {
+                        itemImg.src = newUrls;
+                      }
+                    });
+
+                    // Chuyển cây DOM thành chuỗi HTML mới
+                    let newHtmlString = doc.documentElement.outerHTML;
+                    this.html.set(newHtmlString);
+                  }
+                );
+              });
+          },
+          "image.removed": function (img) {
+            let url = img[0].src.toString();
+            url = url.replace(
+              `${DOMAN}/back_end/api/Controllers/GetFileController.php?imgURL=`,
+              ""
+            );
+            url = url.replace("&width=1200", "");
+            console.log(url);
+            CatService.deleteImage([url]).then((res) => {
+              console.log("da xoa", res.data);
+            });
+          },
+          "image.replaced": function (img) {
+            let imageName =
+              Math.floor(Math.random() * (100000000 - 1000000 + 1)) +
+              1000000 +
+              "image_news.jpg";
+            fetch(img[0].src)
+              .then((response) => response.blob())
+              .then((blob) => {
+                UploadFile.uploadImage([blob], [`word/${imageName}`]).then(
+                  (res) => {
+                    console.log(res.data);
+                    // set new src of image in HTML
+                    let newUrls = `${DOMAN}/back_end/api/Controllers/GetFileController.php?imgURL=word/${imageName}&width=1200`;
+                    let htmlString = this.html.get();
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(htmlString, "text/html");
+
+                    // Lấy tất cả các thẻ <img> trong cây DOM
+                    let imgElements = doc.querySelectorAll("img");
+
+                    // Thay đổi thuộc tính src của mỗi thẻ <img> bằng các URL mới
+                    imgElements.forEach(function (itemImg) {
+                      if (itemImg.src === img[0].src) {
+                        itemImg.src = newUrls;
+                      }
+                    });
+
+                    // Chuyển cây DOM thành chuỗi HTML mới
+                    let newHtmlString = doc.documentElement.outerHTML;
+                    this.html.set(newHtmlString);
+                  }
+                );
+              });
+          },
+        },
+      },
+      configRe: {
+        events: {
+          initialized: function () {
+            console.log("initialized");
+          },
+          "image.inserted": function (img) {
+            let imageName =
+              Math.floor(Math.random() * (100000000 - 1000000 + 1)) +
+              1000000 +
+              "image_news.jpg";
+            fetch(img[0].src)
+              .then((response) => response.blob())
+              .then((blob) => {
+                UploadFile.uploadImage([blob], [`word/${imageName}`]).then(
+                  (res) => {
+                    console.log(res.data);
+                    // set new src of image in HTML
+                    let newUrls = `${DOMAN}/back_end/api/Controllers/GetFileController.php?imgURL=word/${imageName}&width=1200`;
+                    let htmlString = this.html.get();
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(htmlString, "text/html");
+
+                    // Lấy tất cả các thẻ <img> trong cây DOM
+                    let imgElements = doc.querySelectorAll("img");
+
+                    // Thay đổi thuộc tính src của mỗi thẻ <img> bằng các URL mới
+                    imgElements.forEach(function (itemImg) {
+                      if (itemImg.src === img[0].src) {
+                        itemImg.src = newUrls;
+                      }
+                    });
+
+                    // Chuyển cây DOM thành chuỗi HTML mới
+                    let newHtmlString = doc.documentElement.outerHTML;
+                    this.html.set(newHtmlString);
+                  }
+                );
+              });
+          },
+          "image.removed": function (img) {
+            let url = img[0].src.toString();
+            url = url.replace(
+              `${DOMAN}/back_end/api/Controllers/GetFileController.php?imgURL=`,
+              ""
+            );
+            url = url.replace("&width=1200", "");
+            console.log(url);
+            CatService.deleteImage([url]).then((res) => {
+              console.log("da xoa", res.data);
+            });
+          },
+          "image.replaced": function (img) {
+            let imageName =
+              Math.floor(Math.random() * (100000000 - 1000000 + 1)) +
+              1000000 +
+              "image_news.jpg";
+            fetch(img[0].src)
+              .then((response) => response.blob())
+              .then((blob) => {
+                UploadFile.uploadImage([blob], [`word/${imageName}`]).then(
+                  (res) => {
+                    console.log(res.data);
+                    // set new src of image in HTML
+                    let newUrls = `${DOMAN}/back_end/api/Controllers/GetFileController.php?imgURL=word/${imageName}&width=1200`;
+                    let htmlString = this.html.get();
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(htmlString, "text/html");
+
+                    // Lấy tất cả các thẻ <img> trong cây DOM
+                    let imgElements = doc.querySelectorAll("img");
+
+                    // Thay đổi thuộc tính src của mỗi thẻ <img> bằng các URL mới
+                    imgElements.forEach(function (itemImg) {
+                      if (itemImg.src === img[0].src) {
+                        itemImg.src = newUrls;
+                      }
+                    });
+
+                    // Chuyển cây DOM thành chuỗi HTML mới
+                    let newHtmlString = doc.documentElement.outerHTML;
+                    this.html.set(newHtmlString);
+                  }
+                );
+              });
+          },
+        },
+      },
+      recomment: "",
       footerContent: "",
       oldPass: "",
       pass: "",
@@ -156,7 +358,8 @@ export default {
         this.youtube,
         this.phone,
         this.zalo,
-        this.messenger
+        this.messenger,
+        this.recomment
       ).then((res) => {
         if (res.data) {
           this.showNotification(["Sửa thành công", false]);
@@ -181,6 +384,7 @@ export default {
           this.oldPhone = "0" + res.data.phone;
           this.zalo = res.data.zalo;
           this.messenger = res.data.messenger;
+          this.recomment = res.data.recomment;
         }
       });
     },

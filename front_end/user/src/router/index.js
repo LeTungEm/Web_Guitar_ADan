@@ -28,6 +28,11 @@ const routes = [
     component: () => import('../pages/User/AccessoryView.vue'),
   },
   {
+    name: 'RecomemtView',
+    path: '/huong-dan-mua-hang',
+    component: () => import('../pages/User/RecomemtView.vue'),
+  },
+  {
     name: 'ActivityDetail',
     path: '/hoat-dong/:slug',
     component: () => import('../pages/User/NewDetailView.vue'),

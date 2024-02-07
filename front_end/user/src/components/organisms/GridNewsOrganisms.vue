@@ -1,6 +1,6 @@
 <template>
-  <div class="overflow-hidden">
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-[5%] lg:gap-[10%]">
+  <div>
+    <div class="grid grid-cols-2 lg:grid-cols-3">
       <NewsItemMolecule
         v-for="product in listNew"
         :key="product"

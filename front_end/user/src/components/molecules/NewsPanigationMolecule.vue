@@ -1,7 +1,7 @@
 <template>
     <div
       v-if="splitPage() > 1"
-      class="flex justify-center items-center text-sm md:text-lg [&>*]:cursor-pointer [&>*]:w-7 [&>*]:h-7 md:[&>*]:w-10 md:[&>*]:h-10 [&>*]:border [&>*]:justify-center [&>*]:items-center hover:[&>*]:border-black"
+      class="flex justify-center items-center [&>*]:bg-white text-sm md:text-lg [&>*]:cursor-pointer [&>*]:w-7 [&>*]:h-7 md:[&>*]:w-10 md:[&>*]:h-10 [&>*]:border [&>*]:justify-center [&>*]:items-center hover:[&>*]:border-black"
     >
       <span :onclick="toPreviousPage" class="flex"
         ><font-awesome-icon :icon="['fas', 'arrow-left']"

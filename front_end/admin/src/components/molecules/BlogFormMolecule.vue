@@ -45,7 +45,7 @@
           <label class="text-gray-500 font-bold" for="shortDescription">
             <span class="font-bold">Link youtube</span> (Hướng dẫn: dùng máy
             tính => vào youtube => chon video => chọn CHIA SẺ => chọn NHÚNG =>
-            sao chép đoạn mã đó dán vào đây => bấm THÊM)
+            sao chép đoạn mã đó dán vào đây => bấm LƯU LẠI)
           </label>
           <input
             id="shortDescription"

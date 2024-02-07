@@ -224,7 +224,7 @@
             />
             <div
               :onclick="addVideoLink"
-              class="flex items-center justify-center px-5 text-white font-bold0 rounded-md"
+              class="flex items-center justify-center px-5 bg-green-700 cursor-pointer text-white font-bold0 rounded-md hover:bg-green-800"
             >
               THÊM
             </div>
